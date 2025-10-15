@@ -1,30 +1,43 @@
 // SLIP 7
 // Q1
+slip 7-q1
+
 class Bank {
-private double balance;
-public Bank() {
-balance = 0;
-}
-public Bank(double initialBalance) {
-balance = initialBalance;
-}
-public void deposit(double amount) {
-balance = balance + amount;
-}
-public void withdraw(double amount) {
-balance = balance - amount;
-}
-public double getBalance() {
-return balance;
-}
-public static void main(String[] args) {
-Bank b = new Bank(1000);
-b.withdraw(250);
-System.out.println("The withdraw is:" + b.balance);
-b.deposit(400);
-System.out.println("The deposit is:" + b.balance);
-System.out.println("The balance is:" + b.getBalance());
-}
+    private String accno;
+    private String acc_holder;
+    private double balance;
+
+    public Bank(String accno, String acc_holder, double initialBalance) {
+        this.accno = accno;
+        this.acc_holder = acc_holder;
+        this.balance = initialBalance;
+    }
+
+    public void deposit(double amount) {
+        balance += amount;
+        System.out.println("\nDeposited: Rs." + amount);
+    }
+
+    public void withdraw(double amount) {
+        balance -= amount;
+        System.out.println("\nWithdrew: Rs." + amount);
+    }
+
+    public void checkBalance() {
+        System.out.println("\nAccount Holder: " + acc_holder);
+        System.out.println("Account Number: " + accno);
+        System.out.println("Current Balance: Rs." + balance);
+        System.out.println("-----------------");
+    }
+
+    public static void main(String[] args) {
+        Bank account = new Bank("12345", "Mayur", 1000.0);
+
+        account.checkBalance();
+        account.deposit(500.0);
+        account.withdraw(200.0);
+        account.checkBalance();
+    }
 }
 //Q2
 import java.io.*;
@@ -48,4 +61,5 @@ bis.reset();
 System.out.println();
 bis.close();
 }
+
 }
