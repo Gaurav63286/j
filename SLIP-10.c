@@ -17,6 +17,21 @@ System.out.println("Cube of " + number + " is: " + result);
 scanner.close();
 }
 }
+
+
+@FunctionalInterface
+interface PrintNumber
+{
+public void print(int num1);
+}
+public class Printcube
+{
+public static void main(String[] a)
+{
+PrintNumber p = n -> System.out.println("Cube is: "+ n*n*n);
+p.print(5);
+}
+}
 //Q2
 StudentInfo.java
 
@@ -67,3 +82,4 @@ student.displayInfo();
 sc.close();
 }
 }
+
