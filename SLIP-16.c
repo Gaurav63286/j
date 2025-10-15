@@ -18,6 +18,20 @@ scanner.close();
 }
 }
 
+@FunctionalInterface
+interface PrintNumber
+{
+public void print(int num1);
+}
+public class Printcube
+{
+public static void main(String[] a)
+{
+PrintNumber p = n -> System.out.println("Cube is: "+ n*n*n);
+p.print(5);
+}
+}
+
 //SLIP 16 Q2
 import javax.swing.*;
 class Menu_bar
@@ -56,4 +70,5 @@ public static void main(String args[])
 {
 new Menu_bar();
 }
+
 }
